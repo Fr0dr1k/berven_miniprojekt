@@ -28,7 +28,7 @@ def newton(fun, fprim, x0, tol):
     dx = 2 * tol
     niter = 0
     while np.abs(dx) > tol:
-        niter = niter + 1
+        niter += 1
         dx = - fun(x) / fprim(x)
         x = x + dx
         assert (niter < maxiter)
@@ -43,5 +43,5 @@ I = 1000
 n = 5
 K = 6000
 
-print("Newton:", newton(investment,fprim,0.06, 10**-6))
-print("Bisection:", bisection(investment, 0.04, 0.07, 10 ** -6))
+print("Newton:", newton(investment,fprim,0.1, 10**-6))
+print("Bisection:", bisection(investment, 0.01, 0.10, 10 ** -6))
